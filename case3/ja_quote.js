@@ -1,17 +1,32 @@
+"use strict";
 /*
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 9
    Case Problem 3
 
    Random Jane Austen Quote Generator
-   Author: 
-   Date:   
+   Author: Marcus Tinney
+   Date: 1/21/2020  
    
    This script randomly generates a Jane Austen quote from
    a list of 10 quotes and writes that quote into the first
    quotation tag in the Web page.
 
 */
+//This calls for a random value from 1 to 10 with 0, being the lowest (Aka the first one) and 10 being the size
+var randomQ = randomInt(0,10);
+
+//This is the math that figures out how to get 1 through 10
+function randomInt(louis, size){
+   var randy = Math.floor(Math.random() * size + louis);
+   return randy;
+}
+
+//This pulls out a random quote from the list
+var quoteElem = document.getElementsByTagName("quote")[0];
+
+//This simplay replaces "quote" with the actual quote silly goose!
+quoteElem.innerHTML = getQuote(randomQ);
 
 
 function getQuote(n) {
